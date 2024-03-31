@@ -1,14 +1,31 @@
+# Use Onchain Metadata With Your NFTs
+
+talk a bout onchain nft
+
 ## Getting Started
 
 Create a project using this example:
+run: `npx thirdweb@latest create --contract`
 
-```bash
-npx thirdweb create --contract --template hardhat-javascript-starter
-```
+- What is your project named? … nft-onchain
+- What framework do you want to use? › Hardhat
+- What will be the name of your new smart contract? … MyContract
+- What type of contract do you want to start from? › ERC721
+- What extensions do you want to add to your contract? › None
 
 You can start editing the page by modifying `contracts/Contract.sol`.
 
 To add functionality to your contracts, you can use the `@thirdweb-dev/contracts` package which provides base contracts and extensions to inherit. The package is already installed with this project. Head to our [Contracts Extensions Docs](https://portal.thirdweb.com/contractkit) to learn more.
+
+## Install dependency
+
+watch `package.json` file
+run `yarn add @openzeppelin/contracts` or `npm install @openzeppelin/contracts`
+edit `MyContract.sol` file
+
+## Deploy smart contract
+
+run `npx thirdweb@latest deploy`
 
 ## Building the project
 
@@ -41,7 +58,3 @@ npm run release
 # or
 yarn release
 ```
-
-## Join our Discord!
-
-For any questions, suggestions, join our discord at [https://discord.gg/thirdweb](https://discord.gg/thirdweb).
