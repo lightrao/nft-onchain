@@ -23,10 +23,6 @@ watch `package.json` file
 run `yarn add @openzeppelin/contracts` or `npm install @openzeppelin/contracts`
 edit `MyContract.sol` file
 
-## Deploy smart contract
-
-run `npx thirdweb@latest deploy`
-
 ## Building the project
 
 After any changes to the contract, run:
@@ -44,10 +40,18 @@ to compile your contracts. This will also detect the [Contracts Extensions Docs]
 When you're ready to deploy your contracts, just run one of the following command to deploy you're contracts:
 
 ```bash
+npx thirdweb@latest deploy
+# or
 npm run deploy
 # or
 yarn deploy
 ```
+
+go back to browser and see thirdweb dashboard which help you depoly contract
+
+## Mint NFT
+
+use thirdweb dashboard to mint Nft and manage it
 
 ## Releasing Contracts
 

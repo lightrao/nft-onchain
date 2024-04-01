@@ -50,7 +50,7 @@ contract MyContract is ERC721Base {
         uint256 tokenId,
         string memory keyPrefix,
         string[] memory sourceArray
-    ) internal view returns (string memory) {
+    ) internal pure returns (string memory) {
         uint256 rand = random(
             string(abi.encodePacked(keyPrefix, Strings.toString(tokenId)))
         );
@@ -62,17 +62,17 @@ contract MyContract is ERC721Base {
     function tokenURI(
         uint256 tokenId
     ) public view override returns (string memory) {
-        string[8] memory parts;
+        string[7] memory parts;
 
         parts[
             0
         ] = '<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin meet" viewBox="0 0 350 350"><style>.base { fill: white; font-family: serif; font-size: 14px; }</style><rect width="100%" height="100%" fill="black" /><text x="10" y="20" class="base">';
-        parts[1] = getName(tokenId);
+        parts[1] = getBlockchain(tokenId);
         parts[2] = '</text><text x="10" y="40" class="base">';
-        parts[3] = getLocation(tokenId);
+        parts[3] = getDapp(tokenId);
         parts[4] = '</text><text x="10" y="60" class="base">';
-        parts[6] = getIndustry(tokenId);
-        parts[7] = "</text></svg>";
+        parts[5] = getToken(tokenId);
+        parts[6] = "</text></svg>";
 
         string memory output = string(
             abi.encodePacked(
@@ -80,9 +80,9 @@ contract MyContract is ERC721Base {
                 parts[1],
                 parts[2],
                 parts[3],
+                parts[4],
                 parts[5],
-                parts[6],
-                parts[7]
+                parts[6]
             )
         );
 
